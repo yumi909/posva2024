@@ -12,8 +12,10 @@ body {
 .background-image {
     background: url('mainpage.jpg') no-repeat center top;
     background-size: 100% auto; /* Масштабируем по ширине */
-    height: 100vh; /* Высота на весь экран */
+    height: auto; /* Сделаем высоту адаптивной */
+    min-height: 100vh; /* Минимальная высота блока равна высоте экрана */
     position: relative;
+    overflow: hidden; /* Это позволяет прокручивать изображение, если оно не помещается */
 }
 
 /* Заголовок */
@@ -23,6 +25,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5rem; /* Размер заголовка */
+    z-index: 1; /* Обеспечивает, что заголовок будет на переднем плане */
 }
 
 /* Текст на главной странице */
@@ -31,6 +34,8 @@ body {
     padding: 20px;
     font-size: 1.2rem;
     margin-top: 100px; /* Отступ сверху от фонового изображения */
+    z-index: 1; /* Текст будет отображаться на переднем плане */
+    background-color: transparent; /* Убираем черный фон */
 }
 
 /* Плееры */
