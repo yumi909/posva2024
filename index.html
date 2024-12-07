@@ -31,14 +31,58 @@
 
         <!-- Плеер с Яндекс.Диска -->
         <h2>and here</h2>
-        <audio controls>
-            <source src="https://disk.yandex.ru/d/ID_ФАЙЛА?name=название_файла.mp3" type="audio/mp3">
+
+        <!-- Плеер для переключения между файлами -->
+        <audio id="audioPlayer" controls>
+            <source id="audioSource" type="audio/mp3">
             Ваш браузер не поддерживает элемент audio.
         </audio>
-        <audio controls>
-            <source src="https://disk.yandex.ru/d/ID_ФАЙЛА_2?name=название_файла_2.mp3" type="audio/mp3">
-            Ваш браузер не поддерживает элемент audio.
-        </audio>
+
+        <!-- Кнопки для переключения файлов -->
+        <button id="prevBtn">Предыдущее</button>
+        <button id="nextBtn">Следующее</button>
+
+        <script>
+            // Массив с публичными ссылками на аудиофайлы с Яндекс.Диска
+            const audioFiles = [
+                "https://disk.yandex.ru/d/ID_ФАЙЛА_1?stream=1", 
+                "https://disk.yandex.ru/d/ID_ФАЙЛА_2?stream=1", 
+                "https://disk.yandex.ru/d/ID_ФАЙЛА_3?stream=1"
+            ];
+
+            let currentIndex = 0;
+
+            // Функция для загрузки и воспроизведения текущего аудиофайла
+            function loadAudio(index) {
+                const audioSource = document.getElementById("audioSource");
+                audioSource.src = audioFiles[index];
+                const audioPlayer = document.getElementById("audioPlayer");
+                audioPlayer.load(); // Перезагружаем плеер с новым источником
+                audioPlayer.play(); // Автоматически начинаем воспроизведение
+            }
+
+            // Слушатели событий для кнопок переключения
+            document.getElementById("prevBtn").addEventListener("click", () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = audioFiles.length - 1; // Если мы на первом файле, переходим к последнему
+                }
+                loadAudio(currentIndex);
+            });
+
+            document.getElementById("nextBtn").addEventListener("click", () => {
+                if (currentIndex < audioFiles.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Если мы на последнем файле, переходим к первому
+                }
+                loadAudio(currentIndex);
+            });
+
+            // Инициализация плеера с первым файлом
+            loadAudio(currentIndex);
+        </script>
     </div>
 
 </body>
