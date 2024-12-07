@@ -32,8 +32,8 @@
         <!-- Плеер с Яндекс.Диска -->
         <h2>and here</h2>
 
-        <!-- Плеер для переключения между файлами -->
-        <audio id="audioPlayer" controls>
+        <!-- Плеер для переключения между файлами с автозапуском -->
+        <audio id="audioPlayer" controls autoplay>
             <source id="audioSource" type="audio/mp3">
             Ваш браузер не поддерживает элемент audio.
         </audio>
@@ -48,12 +48,6 @@
                 "https://disk.yandex.ru/d/F4nTa0Lo3cqayQ?stream=1", 
                 "https://disk.yandex.ru/d/Yb73w-WUaQFMZA?stream=1", 
                 "https://disk.yandex.ru/d/HwNiNMU6901XjA?stream=1"
-                "https://disk.yandex.ru/d/wIpp1Ory5EczgQ?stream=1"
-                "https://disk.yandex.ru/d/ID_ФАЙЛА_5?stream=1"
-                "https://disk.yandex.ru/d/ID_ФАЙЛА_6?stream=1"
-                "https://disk.yandex.ru/d/ID_ФАЙЛА_7?stream=1"
-                "https://disk.yandex.ru/d/ID_ФАЙЛА_8?stream=1"
-                "https://disk.yandex.ru/d/ID_ФАЙЛА_9?stream=1"
             ];
 
             let currentIndex = 0;
@@ -86,7 +80,7 @@
                 loadAudio(currentIndex);
             });
 
-            // Инициализация плеера с первым файлом
+            // Инициализация плеера с первым файлом и автозапуском
             loadAudio(currentIndex);
         </script>
     </div>
