@@ -1,0 +1,28 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    background: url('mainpage.jpg') no-repeat center center fixed;
+    background-size: 100% auto; /* Масштабируем фоновое изображение по ширине */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+audio {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 166px;
+    border: none;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальный Плейлист</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Слушайте два плейлиста одновременно</h1>
+
+        <!-- Плеер SoundCloud -->
+        <h2>Плейлист SoundCloud</h2>
+        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/ID_ПЛЕЙЛИСТА&color=%23ff5500&auto_play=true" frameborder="0" allow="autoplay"></iframe>
+
+        <!-- Плеер с Яндекс.Диска -->
+        <h2>Ваши аудиофайлы</h2>
+        <audio controls>
+            <source src="https://disk.yandex.ru/d/ID_ФАЙЛА?name=название_файла.mp3" type="audio/mp3">
+            Ваш браузер не поддерживает элемент audio.
+        </audio>
+        <audio controls>
+            <source src="https://disk.yandex.ru/d/ID_ФАЙЛА_2?name=название_файла_2.mp3" type="audio/mp3">
+            Ваш браузер не поддерживает элемент audio.
+        </audio>
+    </div>
+
+</body>
+</html>
