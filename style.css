@@ -41,7 +41,7 @@ body {
 /* Плееры */
 .players {
     position: relative;
-    bottom: 0;
+    margin-top: 20px; /* Отступ сверху для плееров */
     padding: 20px;
 }
 
