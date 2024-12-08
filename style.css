@@ -28,12 +28,14 @@ body {
     z-index: 1; /* Обеспечивает, что заголовок будет на переднем плане */
 }
 
-/* Текст на главной странице */
+/* Подзаголовок */
 .main-text {
-    position: relative;
+    position: absolute;
+    top: 35%; /* 20% ниже заголовка */
+    left: 50%;
+    transform: translateX(-50%);
     padding: 20px;
     font-size: 1.2rem;
-    margin-top: 100px; /* Отступ сверху от фонового изображения */
     z-index: 1; /* Текст будет отображаться на переднем плане */
     background-color: transparent; /* Убираем подложку */
     color: white; /* Цвет текста белый */
