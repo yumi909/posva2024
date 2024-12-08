@@ -5,45 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the voices</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем шрифт Ubuntu -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Фоновое изображение -->
     <div class="background-image">
-        <!-- Заголовок на странице -->
         <div class="header">
             <h1>the voices</h1>
         </div>
     </div>
 
-    <!-- Текст для главной страницы -->
     <div class="main-text">
         <p>of kordon</p>
     </div>
 
-    <!-- Плееры -->
     <div class="players">
-        <!-- Плеер SoundCloud -->
+        <!-- SoundCloud плеер -->
         <h2>tap play here</h2>
         <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&color=%23ff5500&auto_play=true" frameborder="0" allow="autoplay"></iframe>
 
-        <!-- Плеер с GitHub -->
+        <!-- Плеер для аудиофайлов из репозитория GitHub -->
         <h2>and here</h2>
-
-        <!-- Плеер для переключения между файлами с автозапуском -->
         <audio id="audioPlayer" controls autoplay>
             <source id="audioSource" type="audio/mp3">
             Ваш браузер не поддерживает элемент audio.
         </audio>
 
-        <!-- Кнопки для переключения файлов -->
+        <!-- Кнопки для переключения -->
         <button id="prevBtn">Предыдущее</button>
         <button id="nextBtn">Следующее</button>
 
         <script>
-            // Массив с публичными ссылками на аудиофайлы из репозитория GitHub
             const audioFiles = [
                 "https://raw.githubusercontent.com/yumi909/posva2024/main/1.mp3", 
                 "https://raw.githubusercontent.com/yumi909/posva2024/main/2.mp3", 
