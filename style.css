@@ -6,16 +6,16 @@ body {
     background-color: #000;
     color: white;
     text-align: center;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 /* Фоновое изображение */
 .background-image {
-    background: url('mainpage.jpg') no-repeat center top;
-    background-size: cover; /* Масштабируем изображение по ширине и высоте */
-    width: 100%;
-    height: auto; /* Высота будет адаптироваться в зависимости от ширины экрана */
-    min-height: 100vh; /* Минимальная высота блока равна высоте экрана */
-    position: relative; /* Для позиционирования дочерних элементов */
+    background: url('mainpage.jpg') no-repeat top center;
+    background-size: 100% auto; /* Масштабируем изображение по ширине, высота меняется пропорционально */
+    height: auto; /* Высота зависит от ширины экрана, картинка сохраняет пропорции */
+    min-height: 100vh; /* Минимальная высота блока — экран */
+    width: 100%; /* Ширина блока — 100% */
 }
 
 /* Заголовок */
@@ -31,23 +31,23 @@ body {
 /* Текст на главной странице */
 .main-text {
     position: absolute;
-    bottom: 25%; /* Располагаем текст в нижней части изображения */
+    bottom: 25%; /* Располагаем текст ближе к нижней части изображения */
     left: 50%;
-    transform: translateX(-50%); /* Центрируем текст по горизонтали */
+    transform: translateX(-50%);
     padding: 20px;
     font-size: 1.5rem;
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для читаемости */
-    z-index: 1; /* Текст будет на переднем плане */
+    z-index: 1; /* Текст на переднем плане */
 }
 
 /* Плееры */
 .players {
     position: absolute;
-    bottom: 10%; /* Чуть выше отступа для текста */
+    bottom: 10%; /* Располагаем плееры ещё ниже */
     left: 50%;
-    transform: translateX(-50%); /* Центрируем плееры по горизонтали */
+    transform: translateX(-50%);
     padding: 20px;
-    z-index: 1; /* Плееры будут на переднем плане */
+    z-index: 1; /* Плееры на переднем плане */
 }
 
 audio {
