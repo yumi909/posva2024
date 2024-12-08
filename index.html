@@ -52,16 +52,24 @@
                 "https://raw.githubusercontent.com/yumi909/posva2024/main/5.mp3"
             ];
 
-            let currentIndex = 0;
+            let playedFiles = [];
 
             // Функция для случайного выбора следующего файла
             function getRandomIndex() {
-                return Math.floor(Math.random() * audioFiles.length);
+                if (playedFiles.length === audioFiles.length) {
+                    playedFiles = []; // Сброс массива, если все файлы были проиграны
+                }
+                let randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * audioFiles.length);
+                } while (playedFiles.includes(randomIndex));
+                playedFiles.push(randomIndex); // Добавляем индекс в массив проигранных
+                return randomIndex;
             }
 
             // Функция для загрузки и воспроизведения случайного аудиофайла
             function loadAudio() {
-                currentIndex = getRandomIndex(); // Выбираем случайный индекс
+                const currentIndex = getRandomIndex(); // Выбираем случайный индекс
                 const audioSource = document.getElementById("audioSource");
                 audioSource.src = audioFiles[currentIndex];
                 const audioPlayer = document.getElementById("audioPlayer");
@@ -71,17 +79,18 @@
 
             // Слушатели событий для кнопок переключения
             document.getElementById("prevBtn").addEventListener("click", () => {
-                currentIndex = getRandomIndex(); // Переключаем на случайный файл
                 loadAudio();
             });
 
             document.getElementById("nextBtn").addEventListener("click", () => {
-                currentIndex = getRandomIndex(); // Переключаем на случайный файл
                 loadAudio();
             });
 
             // Инициализация плеера с случайным файлом и автозапуском
             loadAudio();
+
+            // Обработчик события завершения текущего трека
+            document.getElementById("audioPlayer").addEventListener("ended", loadAudio);
         </script>
     </div>
 
