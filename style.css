@@ -68,16 +68,34 @@ audio {
 
 /* Кнопки для переключения аудиофайлов */
 button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 5px 10px; /* Уменьшаем размер кнопок */
+    font-size: 0.8rem; /* Меньший шрифт */
     margin: 5px;
-    background-color: #ff5500;
+    background-color: #333; /* Тёмно-серый цвет кнопок */
     border: none;
-    color: white;
+    color: white; /* Белый текст */
     cursor: pointer;
+    display: inline-block; /* Обеспечиваем расположение кнопок в одну линию */
 }
 
 button:hover {
-    background-color: #e04e00; /* Цвет кнопки при наведении */
+    background-color: #555; /* Цвет кнопки при наведении */
 }
 
+/* Центрируем кнопки под плеером аудиофайлов */
+.players button {
+    display: inline-block;
+    margin: 10px auto; /* Центрируем кнопки */
+}
+
+/* Текст "Закрыть" для SoundCloud плеера */
+.close-button {
+    position: absolute;
+    top: -25px; /* Расположим текст чуть выше плеера */
+    right: 10px; /* Сместим его к правому краю */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 2; /* Чтобы текст был поверх плеера */
+}
