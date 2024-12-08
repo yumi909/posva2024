@@ -6,27 +6,26 @@ body {
     background-color: #000;
     color: white;
     text-align: center;
-    overflow-x: hidden; /* Чтобы избежать горизонтальной прокрутки */
 }
 
 /* Фоновое изображение */
 .background-image {
-    background: url('mainpage.jpg') no-repeat top center;
-    background-size: contain; /* Масштабируем изображение по ширине */
-    background-attachment: scroll; /* Картинка будет прокручиваться вместе с контентом */
+    background: url('mainpage.jpg') no-repeat center top;
+    background-size: cover; /* Масштабируем изображение по ширине и высоте */
     width: 100%;
-    position: relative;
-    /* Высота фона будет зависеть от ширины экрана, и можно будет прокручивать вниз */
+    height: auto; /* Высота будет адаптироваться в зависимости от ширины экрана */
+    min-height: 100vh; /* Минимальная высота блока равна высоте экрана */
+    position: relative; /* Для позиционирования дочерних элементов */
 }
 
 /* Заголовок */
 .header h1 {
     position: absolute;
-    top: 10%; /* Немного ниже верхней части картинки */
+    top: 15%; /* Отступ от верхней части экрана */
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5rem; /* Размер заголовка */
-    z-index: 1; /* Заголовок на переднем плане */
+    z-index: 1; /* Заголовок будет на переднем плане */
 }
 
 /* Текст на главной странице */
