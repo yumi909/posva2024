@@ -12,7 +12,7 @@ body {
 /* Фоновое изображение */
 .background-image {
     background: url('mainpage.jpg') no-repeat top center;
-    background-size: contain; /* Масштабируем изображение по ширине, сохраняя пропорции */
+    background-size: cover; /* Масштабируем изображение по ширине, сохраняя пропорции */
     width: 100%;
     height: auto; /* Высота зависит от ширины экрана */
     position: relative; /* Позиционирование дочерних элементов */
@@ -32,7 +32,7 @@ body {
 /* Текст на главной странице */
 .main-text {
     position: absolute;
-    bottom: 20%; /* Текст будет расположено ближе к нижней части */
+    bottom: 25%; /* Текст будет расположено ближе к нижней части */
     left: 50%;
     transform: translateX(-50%);
     padding: 20px;
@@ -46,19 +46,4 @@ body {
     position: absolute;
     bottom: 10%; /* Плееры будут располагаться внизу */
     left: 50%;
-    transform: translateX(-50%);
-    padding: 20px;
-    z-index: 1; /* Плееры будут на переднем плане */
-}
-
-audio {
-    width: 80%;
-    margin-bottom: 20px;
-}
-
-iframe {
-    width: 100%;
-    height: 166px;
-    border: none;
-    margin-bottom: 20px;
-}
+    transform:
