@@ -83,9 +83,15 @@ button:hover {
 }
 
 /* Центрируем кнопки под плеером аудиофайлов */
+.players .button-container {
+    display: flex;
+    justify-content: center; /* Выравниваем кнопки по центру */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+/* Размещение кнопок */
 .players button {
-    display: inline-block;
-    margin: 10px auto; /* Центрируем кнопки */
+    margin: 0 10px; /* Отступы между кнопками */
 }
 
 /* Текст "Закрыть" для SoundCloud плеера */
