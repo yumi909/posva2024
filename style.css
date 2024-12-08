@@ -33,10 +33,11 @@ body {
     position: relative;
     padding: 20px;
     font-size: 1.2rem;
-    margin-top: 100px; /* Отступ сверху от фонового изображения */
+    margin-top: 65vh; /* Отступ сверху от 65% от высоты экрана */
     z-index: 1; /* Текст будет отображаться на переднем плане */
     background-color: transparent; /* Убираем подложку */
-    color: white; /* Цвет текста белый */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание по центру */
 }
 
 /* Плееры */
@@ -47,7 +48,6 @@ body {
     z-index: 1; /* Убедимся, что плееры будут на переднем плане */
 }
 
-/* Заголовки для плееров */
 h2 {
     font-size: 1.5rem;
     margin-bottom: 15px; /* Отступ между текстом и плеером */
@@ -65,41 +65,53 @@ iframe {
 audio {
     width: 80%;
     margin-bottom: 20px;
-    display: block; /* Убираем излишние отступы */
-    margin-left: auto; /* Центрируем по горизонтали */
-    margin-right: auto; /* Центрируем по горизонтали */
 }
 
 /* Кнопки для переключения аудиофайлов */
 button {
-    padding: 5px 10px; /* Уменьшаем размер кнопок */
-    font-size: 0.8rem; /* Меньший шрифт */
+    padding: 10px 20px;
+    font-size: 1rem;
     margin: 5px;
-    background-color: #333; /* Тёмно-серый цвет кнопок */
+    background-color: #555555; /* Темно-серый цвет кнопок */
     border: none;
-    color: white; /* Белый текст */
+    color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #555; /* Цвет кнопки при наведении */
+    background-color: #333333; /* Цвет кнопки при наведении */
 }
 
-/* Центрируем кнопки под плеером аудиофайлов */
-.button-container {
+/* Центрирование кнопок */
+button {
+    display: inline-block;
+}
+
+/* Контейнер для кнопок "Предыдущее" и "Следующее" */
+.buttons-container {
     display: flex;
-    justify-content: center; /* Выравниваем кнопки по центру */
-    margin-top: 10px; /* Отступ сверху */
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 2; /* Обеспечивает, что кнопки будут на переднем плане */
 }
 
-/* Текст "Закрыть" для SoundCloud плеера */
-.close-button {
+/* Стили для подвала */
+footer {
     position: absolute;
-    top: -25px; /* Расположим текст чуть выше плеера */
-    right: 10px; /* Сместим его к правому краю */
-    font-size: 1.2rem;
-    font-weight: bold;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
     color: white;
-    cursor: pointer;
-    z-index: 2; /* Чтобы текст был поверх плеера */
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ff5500; /* Цвет ссылки (оранжевый, можно заменить) */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Подчеркивание ссылки при наведении */
 }
