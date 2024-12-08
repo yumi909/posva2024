@@ -9,18 +9,22 @@
 </head>
 <body>
 
+    <!-- Фоновое изображение -->
     <div class="background-image">
+        <!-- Заголовок -->
         <div class="header">
             <h1>the voices</h1>
         </div>
     </div>
 
+    <!-- Текст на главной странице -->
     <div class="main-text">
         <p>of kordon</p>
     </div>
 
+    <!-- Плееры -->
     <div class="players">
-        <!-- SoundCloud плеер -->
+        <!-- Плеер SoundCloud -->
         <h2>tap play here</h2>
         <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&color=%23ff5500&auto_play=true" frameborder="0" allow="autoplay"></iframe>
 
@@ -31,75 +35,21 @@
             Ваш браузер не поддерживает элемент audio.
         </audio>
 
-        <!-- Кнопки для переключения -->
-        <button id="prevBtn">Предыдущее</button>
-        <button id="nextBtn">Следующее</button>
-
-        <script>
-            const audioFiles = [
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/1.mp3", 
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/2.mp3", 
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/3.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/4.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/5.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/6.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/7.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/8.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/9.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/10.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/11.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/12.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/13.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/14.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/15.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/16.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/17.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/18.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/19.mp3",
-                "https://raw.githubusercontent.com/yumi909/posva2024/main/20.mp3"
-            ];
-
-            let playedFiles = [];
-
-            // Функция для случайного выбора следующего файла
-            function getRandomIndex() {
-                if (playedFiles.length === audioFiles.length) {
-                    playedFiles = []; // Сброс массива, если все файлы были проиграны
-                }
-                let randomIndex;
-                do {
-                    randomIndex = Math.floor(Math.random() * audioFiles.length);
-                } while (playedFiles.includes(randomIndex));
-                playedFiles.push(randomIndex); // Добавляем индекс в массив проигранных
-                return randomIndex;
-            }
-
-            // Функция для загрузки и воспроизведения случайного аудиофайла
-            function loadAudio() {
-                const currentIndex = getRandomIndex(); // Выбираем случайный индекс
-                const audioSource = document.getElementById("audioSource");
-                audioSource.src = audioFiles[currentIndex];
-                const audioPlayer = document.getElementById("audioPlayer");
-                audioPlayer.load(); // Перезагружаем плеер с новым источником
-                audioPlayer.play(); // Автоматически начинаем воспроизведение
-            }
-
-            // Слушатели событий для кнопок переключения
-            document.getElementById("prevBtn").addEventListener("click", () => {
-                loadAudio();
-            });
-
-            document.getElementById("nextBtn").addEventListener("click", () => {
-                loadAudio();
-            });
-
-            // Инициализация плеера с случайным файлом и автозапуском
-            loadAudio();
-
-            // Обработчик события завершения текущего трека
-            document.getElementById("audioPlayer").addEventListener("ended", loadAudio);
-        </script>
+        <!-- Кнопки для переключения аудиофайлов -->
+        <div class="buttons-container">
+            <button id="prevBtn">Предыдущее</button>
+            <button id="nextBtn">Следующее</button>
+        </div>
     </div>
 
-</body>
-</html>
+    <!-- Ссылка на Telegram внизу -->
+    <footer>
+        <p><a href="https://t.me/D_YMSHV" target="_blank">TG: D.YMSHV</a></p>
+    </footer>
+
+    <script>
+        // Массив с публичными ссылками на аудиофайлы из репозитория GitHub
+        const audioFiles = [
+            "https://raw.githubusercontent.com/yumi909/posva2024/main/1.mp3", 
+            "https://raw.githubusercontent.com/yumi909/posva2024/main/2.mp3", 
+            "https://raw.githubusercontent.com/yumi909/posva2024/main/
