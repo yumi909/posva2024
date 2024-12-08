@@ -12,7 +12,7 @@ body {
 /* Фоновое изображение */
 .background-image {
     background: url('mainpage.jpg') no-repeat top center;
-    background-size: cover; /* Масштабируем изображение по ширине, сохраняя пропорции */
+    background-size: cover; /* Масштабируем по ширине с сохранением пропорций */
     width: 100%;
     height: auto; /* Высота зависит от ширины экрана */
     position: relative; /* Позиционирование дочерних элементов */
@@ -25,14 +25,14 @@ body {
     top: 15%; /* Отступ от верхней части экрана */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.5rem; /* Размер заголовка */
+    font-size: 2.5rem;
     z-index: 1; /* Заголовок будет на переднем плане */
 }
 
-/* Текст на главной странице */
+/* Подзаголовок */
 .main-text {
     position: absolute;
-    bottom: 25%; /* Текст будет расположено ближе к нижней части */
+    top: 50%; /* Позиционирование примерно в центре экрана */
     left: 50%;
     transform: translateX(-50%);
     padding: 20px;
@@ -44,6 +44,45 @@ body {
 /* Плееры */
 .players {
     position: absolute;
-    bottom: 10%; /* Плееры будут располагаться внизу */
     left: 50%;
-    transform:
+    transform: translateX(-50%);
+    padding: 20px;
+    z-index: 1; /* Плееры будут на переднем плане */
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Надписи над плеерами */
+.players h2 {
+    margin-bottom: 10px;
+}
+
+/* Плеер SoundCloud */
+iframe {
+    width: 100%;
+    height: 166px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Плеер для аудиофайлов */
+audio {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Кнопки переключения файлов */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #ff5500;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Кнопки на экране */
+button:hover {
+    background-color: #e04400;
+}
