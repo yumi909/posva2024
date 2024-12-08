@@ -47,6 +47,7 @@ body {
     z-index: 1; /* Убедимся, что плееры будут на переднем плане */
 }
 
+/* Заголовки для плееров */
 h2 {
     font-size: 1.5rem;
     margin-bottom: 15px; /* Отступ между текстом и плеером */
@@ -64,6 +65,9 @@ iframe {
 audio {
     width: 80%;
     margin-bottom: 20px;
+    display: block; /* Убираем излишние отступы */
+    margin-left: auto; /* Центрируем по горизонтали */
+    margin-right: auto; /* Центрируем по горизонтали */
 }
 
 /* Кнопки для переключения аудиофайлов */
@@ -75,7 +79,6 @@ button {
     border: none;
     color: white; /* Белый текст */
     cursor: pointer;
-    display: inline-block; /* Обеспечиваем расположение кнопок в одну линию */
 }
 
 button:hover {
@@ -83,15 +86,10 @@ button:hover {
 }
 
 /* Центрируем кнопки под плеером аудиофайлов */
-.players .button-container {
+.button-container {
     display: flex;
     justify-content: center; /* Выравниваем кнопки по центру */
     margin-top: 10px; /* Отступ сверху */
-}
-
-/* Размещение кнопок */
-.players button {
-    margin: 0 10px; /* Отступы между кнопками */
 }
 
 /* Текст "Закрыть" для SoundCloud плеера */
