@@ -33,11 +33,10 @@ body {
     position: relative;
     padding: 20px;
     font-size: 1.2rem;
-    margin-top: 65vh; /* Отступ сверху от 65% от высоты экрана */
+    margin-top: 100px; /* Отступ сверху от фонового изображения */
     z-index: 1; /* Текст будет отображаться на переднем плане */
     background-color: transparent; /* Убираем подложку */
-    color: white; /* Белый цвет текста */
-    text-align: center; /* Выравнивание по центру */
+    color: white; /* Цвет текста белый */
 }
 
 /* Плееры */
@@ -72,46 +71,35 @@ button {
     padding: 10px 20px;
     font-size: 1rem;
     margin: 5px;
-    background-color: #555555; /* Темно-серый цвет кнопок */
+    background-color: #555; /* Тёмно-серый цвет */
     border: none;
     color: white;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #333333; /* Цвет кнопки при наведении */
-}
-
-/* Центрирование кнопок */
-button {
     display: inline-block;
 }
 
-/* Контейнер для кнопок "Предыдущее" и "Следующее" */
-.buttons-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    z-index: 2; /* Обеспечивает, что кнопки будут на переднем плане */
+button:hover {
+    background-color: #333; /* Цвет кнопки при наведении */
 }
 
-/* Стили для подвала */
+/* Выравнивание кнопок по центру */
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Стили для футера */
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 20px 0;
     text-align: center;
-    color: white;
-    font-size: 1rem;
+    margin-top: 50px; /* Расстояние от контента до футера */
 }
 
 footer a {
-    color: #ff5500; /* Цвет ссылки (оранжевый, можно заменить) */
-    text-decoration: none;
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 1.2rem;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Подчеркивание ссылки при наведении */
+    color: #ff5500; /* Цвет текста при наведении */
 }
