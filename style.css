@@ -71,25 +71,13 @@ button {
     padding: 10px 20px;
     font-size: 1rem;
     margin: 5px;
-    background-color: #333; /* Тёмно-серый цвет кнопок */
+    background-color: #ff5500;
     border: none;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #555; /* Цвет кнопки при наведении */
-}
-
-/* Текст "Закрыть" для SoundCloud плеера */
-.close-button {
-    position: absolute;
-    top: -25px; /* Расположим текст чуть выше плеера */
-    right: 10px; /* Сместим его к правому краю */
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    z-index: 2; /* Чтобы текст был поверх плеера */
+    background-color: #e04e00; /* Цвет кнопки при наведении */
 }
 
