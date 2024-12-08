@@ -29,7 +29,7 @@
         <h2>tap play here</h2>
         <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&color=%23ff5500&auto_play=true" frameborder="0" allow="autoplay"></iframe>
 
-        <!-- Плеер с Яндекс.Диска -->
+        <!-- Плеер с iBroadcast -->
         <h2>and here</h2>
 
         <!-- Плеер для переключения между файлами с автозапуском -->
@@ -43,19 +43,27 @@
         <button id="nextBtn">Следующее</button>
 
         <script>
-            // Массив с публичными ссылками на аудиофайлы с Яндекс.Диска
+            // Массив с публичными ссылками на аудиофайлы с iBroadcast
             const audioFiles = [
-                "https://disk.yandex.ru/d/F4nTa0Lo3cqayQ?stream=1", 
-                "https://disk.yandex.ru/d/Yb73w-WUaQFMZA?stream=1", 
-                "https://disk.yandex.ru/d/HwNiNMU6901XjA?stream=1"
+                "https://www.ibroadcast.com/track/ID_ФАЙЛА_1", // Замените на прямую ссылку на файл
+                "https://www.ibroadcast.com/track/ID_ФАЙЛА_2", // Замените на прямую ссылку на файл
+                "https://www.ibroadcast.com/track/ID_ФАЙЛА_3", // Замените на прямую ссылку на файл
+                "https://www.ibroadcast.com/track/ID_ФАЙЛА_4", // Замените на прямую ссылку на файл
+                "https://www.ibroadcast.com/track/ID_ФАЙЛА_5"  // Замените на прямую ссылку на файл
             ];
 
             let currentIndex = 0;
 
-            // Функция для загрузки и воспроизведения текущего аудиофайла
-            function loadAudio(index) {
+            // Функция для случайного выбора следующего файла
+            function getRandomIndex() {
+                return Math.floor(Math.random() * audioFiles.length);
+            }
+
+            // Функция для загрузки и воспроизведения случайного аудиофайла
+            function loadAudio() {
+                currentIndex = getRandomIndex(); // Выбираем случайный индекс
                 const audioSource = document.getElementById("audioSource");
-                audioSource.src = audioFiles[index];
+                audioSource.src = audioFiles[currentIndex];
                 const audioPlayer = document.getElementById("audioPlayer");
                 audioPlayer.load(); // Перезагружаем плеер с новым источником
                 audioPlayer.play(); // Автоматически начинаем воспроизведение
@@ -63,25 +71,17 @@
 
             // Слушатели событий для кнопок переключения
             document.getElementById("prevBtn").addEventListener("click", () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                } else {
-                    currentIndex = audioFiles.length - 1; // Если мы на первом файле, переходим к последнему
-                }
-                loadAudio(currentIndex);
+                currentIndex = getRandomIndex(); // Переключаем на случайный файл
+                loadAudio();
             });
 
             document.getElementById("nextBtn").addEventListener("click", () => {
-                if (currentIndex < audioFiles.length - 1) {
-                    currentIndex++;
-                } else {
-                    currentIndex = 0; // Если мы на последнем файле, переходим к первому
-                }
-                loadAudio(currentIndex);
+                currentIndex = getRandomIndex(); // Переключаем на случайный файл
+                loadAudio();
             });
 
-            // Инициализация плеера с первым файлом и автозапуском
-            loadAudio(currentIndex);
+            // Инициализация плеера с случайным файлом и автозапуском
+            loadAudio();
         </script>
     </div>
 
