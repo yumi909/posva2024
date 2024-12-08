@@ -6,44 +6,45 @@ body {
     background-color: #000;
     color: white;
     text-align: center;
+    overflow-x: hidden; /* Чтобы избежать горизонтальной прокрутки */
 }
 
 /* Фоновое изображение */
 .background-image {
-    background: url('mainpage.jpg') no-repeat center top;
-    background-size: cover; /* Масштабируем по ширине и высоте, чтобы картинка покрывала весь экран */
-    background-attachment: fixed; /* Картинка остается на месте при прокрутке */
-    height: 100vh; /* Фон занимает всю высоту экрана */
-    position: relative; /* Это необходимо для позиционирования дочерних элементов поверх */
-    width: 100%; /* На всю ширину экрана */
+    background: url('mainpage.jpg') no-repeat top center;
+    background-size: contain; /* Масштабируем изображение по ширине */
+    background-attachment: scroll; /* Картинка будет прокручиваться вместе с контентом */
+    width: 100%;
+    position: relative;
+    /* Высота фона будет зависеть от ширины экрана, и можно будет прокручивать вниз */
 }
 
 /* Заголовок */
 .header h1 {
     position: absolute;
-    top: 15%; /* Отступ от верхней части экрана */
+    top: 10%; /* Немного ниже верхней части картинки */
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5rem; /* Размер заголовка */
-    z-index: 1; /* Заголовок будет на переднем плане */
+    z-index: 1; /* Заголовок на переднем плане */
 }
 
 /* Текст на главной странице */
 .main-text {
-    position: absolute; /* Размещаем текст поверх фонового изображения */
-    bottom: 20%; /* Отступ от нижней части экрана */
+    position: absolute;
+    bottom: 25%; /* Располагаем текст в нижней части изображения */
     left: 50%;
     transform: translateX(-50%); /* Центрируем текст по горизонтали */
     padding: 20px;
     font-size: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.5); /* Немного полупрозрачного фона для читаемости */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для читаемости */
     z-index: 1; /* Текст будет на переднем плане */
 }
 
 /* Плееры */
 .players {
-    position: absolute; /* Размещаем плееры поверх фонового изображения */
-    bottom: 10%; /* Отступ от нижней части экрана */
+    position: absolute;
+    bottom: 10%; /* Чуть выше отступа для текста */
     left: 50%;
     transform: translateX(-50%); /* Центрируем плееры по горизонтали */
     padding: 20px;
