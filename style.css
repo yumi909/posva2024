@@ -6,17 +6,16 @@ body {
     background-color: #000;
     color: white;
     text-align: center;
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 /* Фоновое изображение */
 .background-image {
-    background: url('mainpage.jpg') no-repeat top center;
-    background-size: cover; /* Масштабируем по ширине с сохранением пропорций */
-    width: 100%;
-    height: auto; /* Высота зависит от ширины экрана */
-    position: relative; /* Позиционирование дочерних элементов */
-    min-height: 100vh; /* Минимальная высота блока — высота экрана */
+    background: url('mainpage.jpg') no-repeat center top;
+    background-size: 100% auto; /* Масштабируем по ширине */
+    height: auto; /* Высота будет адаптироваться в зависимости от ширины экрана */
+    min-height: 100vh; /* Минимальная высота блока равна высоте экрана */
+    position: relative;
+    overflow: hidden; /* Это позволяет прокручивать изображение, если оно не помещается */
 }
 
 /* Заголовок */
@@ -25,36 +24,32 @@ body {
     top: 15%; /* Отступ от верхней части экрана */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.5rem;
-    z-index: 1; /* Заголовок будет на переднем плане */
+    font-size: 2.5rem; /* Размер заголовка */
+    z-index: 1; /* Обеспечивает, что заголовок будет на переднем плане */
 }
 
-/* Подзаголовок */
+/* Текст на главной странице */
 .main-text {
-    position: absolute;
-    top: 50%; /* Позиционирование примерно в центре экрана */
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     padding: 20px;
-    font-size: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для читаемости */
-    z-index: 1; /* Текст будет на переднем плане */
+    font-size: 1.2rem;
+    margin-top: 100px; /* Отступ сверху от фонового изображения */
+    z-index: 1; /* Текст будет отображаться на переднем плане */
+    background-color: transparent; /* Убираем подложку */
+    color: white; /* Цвет текста белый */
 }
 
 /* Плееры */
 .players {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: 30px; /* Отступ сверху для плееров */
     padding: 20px;
-    z-index: 1; /* Плееры будут на переднем плане */
-    width: 80%;
-    max-width: 600px;
+    z-index: 1; /* Убедимся, что плееры будут на переднем плане */
 }
 
-/* Надписи над плеерами */
-.players h2 {
-    margin-bottom: 10px;
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px; /* Отступ между текстом и плеером */
 }
 
 /* Плеер SoundCloud */
@@ -67,22 +62,34 @@ iframe {
 
 /* Плеер для аудиофайлов */
 audio {
-    width: 100%;
+    width: 80%;
     margin-bottom: 20px;
 }
 
-/* Кнопки переключения файлов */
+/* Кнопки для переключения аудиофайлов */
 button {
-    margin: 10px;
     padding: 10px 20px;
-    background-color: #ff5500;
+    font-size: 1rem;
+    margin: 5px;
+    background-color: #333; /* Тёмно-серый цвет кнопок */
     border: none;
     color: white;
-    font-size: 1rem;
     cursor: pointer;
 }
 
-/* Кнопки на экране */
 button:hover {
-    background-color: #e04400;
+    background-color: #555; /* Цвет кнопки при наведении */
 }
+
+/* Текст "Закрыть" для SoundCloud плеера */
+.close-button {
+    position: absolute;
+    top: -25px; /* Расположим текст чуть выше плеера */
+    right: 10px; /* Сместим его к правому краю */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 2; /* Чтобы текст был поверх плеера */
+}
+
