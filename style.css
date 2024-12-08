@@ -42,7 +42,7 @@ body {
 /* Плееры */
 .players {
     position: relative;
-    margin-top: 30px; /* Отступ сверху для плееров */
+    margin-top: 20px; /* Уменьшаем отступ сверху для плееров */
     padding: 20px;
     z-index: 1; /* Убедимся, что плееры будут на переднем плане */
 }
@@ -93,4 +93,29 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem; /* Уменьшаем размер заголовка на мобильных устройствах */
+        top: 10%; /* Немного уменьшаем отступ сверху */
+    }
+
+    .main-text {
+        margin-top: 60px; /* Уменьшаем отступ сверху */
+    }
+
+    .players {
+        margin-top: 10px; /* Уменьшаем отступ сверху для плееров */
+    }
+
+    button {
+        padding: 6px 12px; /* Уменьшаем размер кнопок */
+        font-size: 0.7rem; /* Уменьшаем шрифт кнопок */
+    }
+
+    footer a {
+        font-size: 0.5rem; /* Уменьшаем размер текста ссылки */
+    }
 }
